@@ -68,13 +68,13 @@ public class MainActivityFragment extends Fragment implements JokeCategoryAdapte
     public void onListItemClick(int clickedItemIndex) {
         switch (clickedItemIndex){
             case 0:
-                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<Context, String>(getContext(), DOG_JOKES));
+                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<>(getContext(), DOG_JOKES));
                 break;
             case 1:
-                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<Context, String>(getContext(), CAT_JOKES));
+                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<>(getContext(), CAT_JOKES));
                 break;
             case 2:
-                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<Context, String>(getContext(), MED_JOKES));
+                new MainActivityFragment.EndpointsAsyncTask().execute(new Pair<>(getContext(), MED_JOKES));
                 break;
             default:
         }
@@ -102,7 +102,6 @@ public class MainActivityFragment extends Fragment implements JokeCategoryAdapte
             context = param[0].first;
 
             try {
-                String string = myApiService.sayHi(param[0].second).execute().getData();
                 return myApiService.sayHi(param[0].second).execute().getData();
             } catch (IOException e) {
                 return e.getMessage();
