@@ -93,7 +93,6 @@ public class InstrumentedTest{
         onView(withId(R.id.recycler_view))
                 .check(matches(atPosition(0, hasDescendant(not(withText(""))))));
         Espresso.pressBack();
-
     }
 
     @Test
@@ -104,7 +103,6 @@ public class InstrumentedTest{
         onView(withId(R.id.recycler_view))
                 .check(matches(atPosition(0, hasDescendant(not(withText(""))))));
         Espresso.pressBack();
-
     }
 
     @Test
