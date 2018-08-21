@@ -105,7 +105,7 @@ public class MainActivityFragment extends Fragment implements JokeCategoryAdapte
             try {
                 return myApiService.sayHi(param[0].second).execute().getData();
             } catch(IOException e) {
-                return e.getMessage();
+                return "";
             }
         }
 
